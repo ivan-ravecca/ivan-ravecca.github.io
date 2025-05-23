@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="90" fill="#f0f0f0" stroke="#333" stroke-width="3"/>
+  
+  <!-- ISR Text -->
+  <text x="100" y="100" font-family="Arial" font-size="80" font-weight="bold" text-anchor="middle" dominant-baseline="middle">ISR</text>
+  
+  <!-- Binary code circular path -->
+  <text>
+    <textPath href="#binaryCircle" font-family="monospace" font-size="10" fill="#555">
+      01001001 01010011 01010010 00100000 01001001 01101110 01100011 01110010 01100101 01101101 01100101 01101110 01110100 01100001 01101100
+    </textPath>
+  </text>
+  
+  <!-- Hidden path for text to follow -->
+  <path id="binaryCircle" d="M100,25 A75,75 0 1 1 99,25" fill="none" />
+  
+  <!-- Refresh arrows to symbolize regeneration (adjusted position) -->
+  <path d="M155,75 A50,50 0 0,0 100,45 L100,35 L85,50 L100,65 L100,55 A40,40 0 0,1 145,85 Z" fill="#3498db"/>
+  <path d="M45,125 A50,50 0 0,0 100,155 L100,165 L115,150 L100,135 L100,145 A40,40 0 0,1 55,115 Z" fill="#3498db"/>
+</svg>
