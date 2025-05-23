@@ -37,7 +37,7 @@ const App = () => {
   const personalInfo = {
     name: "Iván Sánchez Ravecca",
     title: "Software Engineer",
-    email: "ivan.ravecca@gmail.com",
+    email: "ivan.ravecca+githubcontact@gmail.com",
     phone: "+598 99 272 545",
     location: "Montevideo, Uruguay",
     github: "https://github.com/ivan-ravecca",
