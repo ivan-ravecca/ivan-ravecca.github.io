@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link as LinkReact } from "react-router-dom";
 import {
   Moon,
@@ -9,7 +9,6 @@ import {
   Github,
   Linkedin,
   ExternalLink,
-  Link,
 } from "lucide-react";
 
 const App = () => {
