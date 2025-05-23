@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "vite eject"
   },
   "dependencies": {
     "@icons-pack/react-simple-icons": "^12.8.0",
