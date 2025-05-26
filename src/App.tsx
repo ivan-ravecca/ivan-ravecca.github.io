@@ -183,6 +183,22 @@ const App = () => {
       github: null,
       demo: "https://elcarnet.com.uy/",
     },
+    {
+      name: "Ticketmaster",
+      description:
+        "Simple ticket management system for events, allowing users to create, manage, and track tickets. It provides a user-friendly interface for event organizers to handle ticket sales and customer interactions. It showcases use of tools and automated deploy to AWS",
+      tech: ["React", "Typescript", "Hosted PostgreSQL", "Node", "AWS"],
+      github: "https://github.com/ivan-ravecca/ticketmaster",
+      demo: "https://ivansanchez.click/",
+    },
+    {
+      name: "Arquitectura en Aluminio",
+      description:
+        "E-commerce website for showcase products, it specializes in a wide range of aluminum products and services. They focus on providing solutions for enclosures, openings, and various other aluminum needs to enhance homes, offices, or any space. They also offer advice and guidance to their clients.",
+      tech: ["PHP", "HTML", "MySQL"],
+      github: "https://github.com/ivan-ravecca/arquitectura",
+      demo: "https://www.arquitecturaenaluminio.com.uy/",
+    },
   ];
 
   const education = [
@@ -427,7 +443,7 @@ const App = () => {
                   ))}
                 </div>
                 <div className="flex gap-4">
-                  {/* {project.github && (
+                  {project.github && (
                     <LinkReact
                       to={project.github}
                       target="_blank"
@@ -437,7 +453,7 @@ const App = () => {
                       <Github className="w-4 h-4" />
                       Code
                     </LinkReact>
-                  )} */}
+                  )}
                   <LinkReact
                     to={project.demo}
                     target="_blank"
