@@ -10,8 +10,19 @@ import {
   Linkedin,
   ExternalLink,
 } from "lucide-react";
+import ReactGA from "react-ga4";
 
 const App = () => {
+  // Initialize GA
+  useEffect(() => {
+    const GOOGLE_ANALYTICS_ID = import.meta.env.VITE_GOOGLE_ANALYTICS_ID;
+    if (GOOGLE_ANALYTICS_ID) {
+      ReactGA.initialize(GOOGLE_ANALYTICS_ID);
+      ReactGA.send("pageview");
+    } else {
+      console.log(`Google Analytics ID is not set: ${GOOGLE_ANALYTICS_ID}`);
+    }
+  }, []);
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
@@ -29,7 +40,21 @@ const App = () => {
   }, [darkMode]);
 
   const toggleDarkMode = () => {
+    ReactGA.event({
+      category: "User Interaction",
+      action: "Toggle Dark Mode",
+      label: darkMode ? "Light Mode" : "Dark Mode",
+    });
     setDarkMode(!darkMode);
+  };
+
+  // Example for project link clicks
+  const trackPageClick = (projectName: string, type: string) => {
+    ReactGA.event({
+      category: "Project Interaction",
+      action: `${type} Click`,
+      label: projectName,
+    });
   };
 
   // Sample data - replace with your information
@@ -264,6 +289,7 @@ const App = () => {
               <LinkReact
                 to={`mailto:${personalInfo.email.link}`}
                 className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                onClick={() => trackPageClick("Email", "Click")}
               >
                 {personalInfo.email.display}
               </LinkReact>
@@ -274,6 +300,7 @@ const App = () => {
                 to="https://wa.me/59899272545?text=Hello%20Iván%20I%20would%20like%20to%20contact%20you"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackPageClick("Whatsapp", "Click")}
               >
                 <span>{personalInfo.phone}</span>
               </LinkReact>
@@ -284,6 +311,7 @@ const App = () => {
                 to="https://maps.app.goo.gl/9XZFU4DxJeZ59uPr8"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackPageClick("Maps", "Click")}
               >
                 <span>{personalInfo.location}</span>
               </LinkReact>
@@ -294,6 +322,7 @@ const App = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                onClick={() => trackPageClick("GitHub", "Click")}
               >
                 <Github className="w-4 h-4" />
                 <span>GitHub</span>
@@ -306,6 +335,7 @@ const App = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                onClick={() => trackPageClick("Linkedin", "Click")}
               >
                 <Linkedin className="w-4 h-4" />
                 <span>LinkedIn</span>
@@ -449,6 +479,7 @@ const App = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                      onClick={() => trackPageClick(project.name, "ClickRepo")}
                     >
                       <Github className="w-4 h-4" />
                       Code
@@ -459,6 +490,7 @@ const App = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                    onClick={() => trackPageClick(project.name, "ClickDemo")}
                   >
                     <ExternalLink className="w-4 h-4" />
                     Site
