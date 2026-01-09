@@ -131,9 +131,20 @@ const App = () => {
 
   const experience = [
     {
+      company: "UKG",
+      position: "Engineering Manager",
+      period: "2025 - Present",
+      location: "Hybrid",
+      achievements: [
+        "Leading a diverse team dedicated to a mission-critical Payroll system with more than 20 years of legacy.",
+        "Owning observability project for legacy system, ensuring systems are working as normal and detecting anomalies.",
+        "Responsible for incident support, root-cause analysis, and the development of new features in a highly time-sensitive environment.",
+        "Experienced in navigating complex business rules, ensuring system stability, and delivering reliable solutions under urgent operational demands.",
+      ],
+    },{
       company: "Teros",
       position: "Head of Engineering",
-      period: "2025 - Present",
+      period: "2025 - 2025",
       location: "Remote",
       achievements: [
         "Contributed to the delivery of the Amoeb.ai product by ensuring a smooth and efficient rollout of new features and bug fixes.",
@@ -177,6 +188,14 @@ const App = () => {
 
   const projects = [
     {
+      name: "UKG",
+      description:
+        "Observability project for legacy system, ensuring systems are working as normal and detecting anomalies.",
+      tech: [".NET", "RabitMQ", "Grafana"],
+      github: null,
+      demo: "non disclosure",
+    },
+    {
       name: "Amoeb.ai",
       description:
         "Advanced AI—deep learning, cognitive AI, and neural networks—to deliver tailored, precise insights that empower smarter decisions.",
@@ -219,7 +238,7 @@ const App = () => {
     {
       name: "Arquitectura en Aluminio",
       description:
-        "E-commerce website for showcase products, it specializes in a wide range of aluminum products and services. They focus on providing solutions for enclosures, openings, and various other aluminum needs to enhance homes, offices, or any space. They also offer advice and guidance to their clients.",
+        "E-commerce website for showcasing products, it specializes in a wide range of aluminum products and services. They focus on providing solutions for enclosures, openings, and various other aluminum needs to enhance homes, offices, or any space. They also offer advice and guidance to their clients.",
       tech: ["PHP", "HTML", "MySQL"],
       github: "https://github.com/ivan-ravecca/arquitectura",
       demo: "https://www.arquitecturaenaluminio.com.uy/",
